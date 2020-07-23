@@ -65,9 +65,9 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
-                        <h5>$0</h5>
-                        <h5>$1,278</h5>
+                        <h5>$ <span id="subTotal">1,278</span></h5>
+                        <h5>$ <span id="texA">38</span></h5>
+                        <h5>$ <span id="total">1,316</span></h5>
                      </div>
                   </div>
                </div>
@@ -78,55 +78,7 @@
          </div>
       </div>
    </section>
-   <script>
-      //common function
-      function getInputNumber(id, newValue){
-      const input = document.getElementById(id).value;
-          const inputValue = parseFloat(input);
-          const inputNumber = inputValue+ newValue;
-         document.getElementById(id).value = inputNumber;
-       
-      }
-      
-      function product(id, productValue){
-         const productString = document.getElementById(id).innerText;
-         const productNumber = parseFloat(productString);
-         const productPrice = productNumber+productValue;
-         document.getElementById(id).innerText = productPrice;
-      }
-
-      //plus1 Btn handler
-      const plus1Btn =document.getElementById("plus1");
-          plus1Btn.addEventListener('click', function(){
-         getInputNumber('input1', 1);
-         product("iphonePrice", 1219);
-         
-        
-      })
-
-      //minus1 btn handler
-      const minus1Btn = document.getElementById('minus1');
-         minus1Btn.addEventListener('click', function(){
-              getInputNumber('input1', -1);
-              product("iphonePrice", -1219);
-         })
-
-         //plus2 btn handler
-         const plus2Btn = document.getElementById('plus2');
-          plus2Btn.addEventListener('click', function(){
-            getInputNumber('input2', 1);
-            product("casePrice", 59);
-         })
-
-         //minus2 btn handler
-       const minus2Btn = document.getElementById('minus2');
-         minus2Btn.addEventListener('click', function(){
-            getInputNumber('input2', -1);
-            product("casePrice", -59);
-         })
-       
-      
-   </script>
+   <script src="main.js"></script>
 </body>
 
 </html>
