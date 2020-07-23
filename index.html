@@ -25,11 +25,12 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="minus1" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input type="text" id="input1" class="form-control text-center" value="1">
+                           <button id="plus1" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <h5>$<span id="iphonePrice">1219</span></span>
+                        </h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -43,12 +44,12 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="minus2" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input type="text" id="input2" class="form-control text-center" value="1">
+                           <button id="plus2" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5>$ <span><span id="casePrice">59</span></span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -77,6 +78,55 @@
          </div>
       </div>
    </section>
+   <script>
+      //common function
+      function getInputNumber(id, newValue){
+      const input = document.getElementById(id).value;
+          const inputValue = parseFloat(input);
+          const inputNumber = inputValue+ newValue;
+         document.getElementById(id).value = inputNumber;
+       
+      }
+      
+      function product(id, productValue){
+         const productString = document.getElementById(id).innerText;
+         const productNumber = parseFloat(productString);
+         const productPrice = productNumber+productValue;
+         document.getElementById(id).innerText = productPrice;
+      }
+
+      //plus1 Btn handler
+      const plus1Btn =document.getElementById("plus1");
+          plus1Btn.addEventListener('click', function(){
+         getInputNumber('input1', 1);
+         product("iphonePrice", 1219);
+         
+        
+      })
+
+      //minus1 btn handler
+      const minus1Btn = document.getElementById('minus1');
+         minus1Btn.addEventListener('click', function(){
+              getInputNumber('input1', -1);
+              product("iphonePrice", -1219);
+         })
+
+         //plus2 btn handler
+         const plus2Btn = document.getElementById('plus2');
+          plus2Btn.addEventListener('click', function(){
+            getInputNumber('input2', 1);
+            product("casePrice", 59);
+         })
+
+         //minus2 btn handler
+       const minus2Btn = document.getElementById('minus2');
+         minus2Btn.addEventListener('click', function(){
+            getInputNumber('input2', -1);
+            product("casePrice", -59);
+         })
+       
+      
+   </script>
 </body>
 
 </html>
