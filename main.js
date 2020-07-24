@@ -62,7 +62,7 @@
             var callCasePrice = document.getElementById('casePrice').innerText;
             var casePriceNumber = parseFloat(callCasePrice);
             var totalAllWithoutTex = mobilePriceNumber+casePriceNumber;
-           if (totalAllWithoutTex > 59) {
+           if (totalAllWithoutTex >= 59) {
                var tex = totalAllWithoutTex/100;
                var totalTexA = tex*3;
                var totalTex = totalTexA.toFixed(2);
@@ -76,4 +76,13 @@
              return totalAll;             
            
          }
-        
+        //checkout button handler
+
+        const checkoutBtn = document.getElementById('checkoutButton');
+         checkoutBtn.addEventListener("click", function(){
+           var cardArea = document.getElementById("card-area");
+           cardArea.style.display = "none";
+           var purchaseArea = document.getElementById('purchase-area');
+           purchaseArea.style.display = "block"; 
+          
+        })
