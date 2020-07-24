@@ -1,5 +1,6 @@
 body{
 	background: rgb(83, 81, 81);
+	color: whitesmoke;
 }
 .container{
 	background: linear-gradient(90deg, grey, rgb(114, 105, 56));
